@@ -1,8 +1,9 @@
+import os
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-MONGO_DB_URI = "mongodb://localhost:27017/minimed"
+MONGO_DB_URI = os.getenv("MONGO_DB_URI", "mongodb://localhost:27017/realestate")
 
 
 class Settings(BaseSettings):
